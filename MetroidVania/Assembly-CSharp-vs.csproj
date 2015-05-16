@@ -48,16 +48,16 @@
   <ItemGroup>
      <Compile Include="Assets\Scripts\AIBehaviour.cs" />
      <Compile Include="Assets\Scripts\Achievement.cs" />
-     <Compile Include="Assets\Scripts\Command.cs" />
-     <Compile Include="Assets\Scripts\GameManager.cs" />
      <Compile Include="Assets\Scripts\IObserver.cs" />
-     <Compile Include="Assets\Scripts\InputHandler.cs" />
-     <Compile Include="Assets\Scripts\JumpCommand.cs" />
-     <Compile Include="Assets\Scripts\ObjectPool.cs" />
+     <Compile Include="Assets\Scripts\Patterns\Command\Command.cs" />
+     <Compile Include="Assets\Scripts\Patterns\Command\InputHandler.cs" />
+     <Compile Include="Assets\Scripts\Patterns\Command\JumpCommand.cs" />
+     <Compile Include="Assets\Scripts\Patterns\Command\WalkLeftCommand.cs" />
+     <Compile Include="Assets\Scripts\Patterns\Command\WalkRightCommand.cs" />
+     <Compile Include="Assets\Scripts\Patterns\ObjectPool\ObjectPool.cs" />
+     <Compile Include="Assets\Scripts\Patterns\ObjectPool\TestObject.cs" />
+     <Compile Include="Assets\Scripts\Patterns\Singleton\GameManager.cs" />
      <Compile Include="Assets\Scripts\Player.cs" />
-     <Compile Include="Assets\Scripts\TestObject.cs" />
-     <Compile Include="Assets\Scripts\WalkLeftCommand.cs" />
-     <Compile Include="Assets\Scripts\WalkRightCommand.cs" />
      <None Include="Assets\Standard Assets\CrossPlatformInput\CrossPlatformInputGuidelines.txt" />
      <None Include="Assets\Standard Assets\Cameras\CameraGuidelines.txt" />
  <Reference Include="UnityEngine.UI">
