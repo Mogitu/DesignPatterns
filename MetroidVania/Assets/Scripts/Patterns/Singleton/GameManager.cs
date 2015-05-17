@@ -1,7 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-
 public enum GameState{
   PLAYING,
   GAMEOVER,
@@ -10,7 +9,7 @@ public enum GameState{
 }
 
 public class GameManager : MonoBehaviour {
-	
+
 	public GameState gameState = GameState.PLAYING;
 	public CheckPointOriginator checkPointOriginator;
 	public CheckPointCareTaker checkPointCareTaker;
