@@ -54,6 +54,7 @@
      <Compile Include="Assets\Scripts\Patterns\Command\JumpCommand.cs" />
      <Compile Include="Assets\Scripts\Patterns\Command\WalkLeftCommand.cs" />
      <Compile Include="Assets\Scripts\Patterns\Command\WalkRightCommand.cs" />
+     <Compile Include="Assets\Scripts\Patterns\FlyWeight\FlyWeightObj.cs" />
      <Compile Include="Assets\Scripts\Patterns\ObjectPool\ObjectPool.cs" />
      <Compile Include="Assets\Scripts\Patterns\ObjectPool\TestObject.cs" />
      <Compile Include="Assets\Scripts\Patterns\Singleton\GameManager.cs" />
