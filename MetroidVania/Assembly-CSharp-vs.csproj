@@ -39,38 +39,30 @@
 	<Reference Include="System.Core" />
 	<Reference Include="System.Xml.Linq" />
 	<Reference Include="UnityEngine">
+	  <HintPath>D:/Program Files (x86)/Unity/Editor/Data/Managed/UnityEngine.dll</HintPath>
+	  <HintPath>C:/Program Files/Unity/Editor/Data/Managed/UnityEngine.dll</HintPath>
 	  <HintPath>C:/Program Files/Unity/Editor/Data/Managed/UnityEngine.dll</HintPath>
 	</Reference>
 	<Reference Include="UnityEditor">
-	  <HintPath>C:/Program Files/Unity/Editor/Data/Managed/UnityEditor.dll</HintPath>
+	  <HintPath>D:/Program Files (x86)/Unity/Editor/Data/Managed/UnityEditor.dll</HintPath>
 	</Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\Scripts\AIBehaviour.cs" />
-     <Compile Include="Assets\Scripts\Achievement.cs" />
-     <Compile Include="Assets\Scripts\IObserver.cs" />
-     <Compile Include="Assets\Scripts\Patterns\Command\Command.cs" />
-     <Compile Include="Assets\Scripts\Patterns\Command\InputHandler.cs" />
-     <Compile Include="Assets\Scripts\Patterns\Command\JumpCommand.cs" />
-     <Compile Include="Assets\Scripts\Patterns\Command\WalkLeftCommand.cs" />
-     <Compile Include="Assets\Scripts\Patterns\Command\WalkRightCommand.cs" />
+     <Compile Include="Assets\Scripts\CheckPoint.cs" />
+     <Compile Include="Assets\Scripts\CheckPointCareTaker.cs" />
+     <Compile Include="Assets\Scripts\CheckPointMemento.cs" />
+     <Compile Include="Assets\Scripts\CheckPointOriginator.cs" />
+     <Compile Include="Assets\Scripts\GameManager.cs" />
+     <Compile Include="Assets\Scripts\KillPlayer.cs" />
      <Compile Include="Assets\Scripts\Patterns\FlyWeight\FlyWeightObj.cs" />
-     <Compile Include="Assets\Scripts\Patterns\ObjectPool\ObjectPool.cs" />
-     <Compile Include="Assets\Scripts\Patterns\ObjectPool\TestObject.cs" />
-     <Compile Include="Assets\Scripts\Patterns\Singleton\GameManager.cs" />
-     <Compile Include="Assets\Scripts\Player.cs" />
      <None Include="Assets\Standard Assets\CrossPlatformInput\CrossPlatformInputGuidelines.txt" />
      <None Include="Assets\Standard Assets\Cameras\CameraGuidelines.txt" />
  <Reference Include="UnityEngine.UI">
- <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
+ <HintPath>D:/Program Files (x86)/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>
  <Reference Include="UnityEditor.iOS.Extensions.Xcode">
- <HintPath>C:/Program Files/Unity/Editor/Data/PlaybackEngines/iossupport/UnityEditor.iOS.Extensions.Xcode.dll</HintPath>
+ <HintPath>D:/Program Files (x86)/Unity/Editor/Data/PlaybackEngines/iossupport/UnityEditor.iOS.Extensions.Xcode.dll</HintPath>
  </Reference>
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="Assembly-CSharp-firstpass-vs.csproj">
-      <Project>{F0DD1E05-1D53-58FD-BD7C-0422BE5B4438}</Project>      <Name>Assembly-CSharp-firstpass-vs</Name>    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

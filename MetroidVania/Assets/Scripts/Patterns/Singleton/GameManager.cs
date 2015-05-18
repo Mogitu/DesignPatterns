@@ -11,6 +11,8 @@ public enum GameState{
 public class GameManager : MonoBehaviour {
 
 	public GameState gameState = GameState.PLAYING;
+	public CheckPointOriginator checkPointOriginator;
+	public CheckPointCareTaker checkPointCareTaker;
 
 	//Singleton instance
 	private static GameManager instance =null;
@@ -27,9 +29,28 @@ public class GameManager : MonoBehaviour {
 		}
 	}
 
+	void Awake()
+	{
+		instance = this;
+	}
+
 	// Use this for initialization
-	void Start () {
-	
+	void Start () 
+	{
+		checkPointOriginator = GameObject.Find("Player").GetComponent<CheckPointOriginator>();
+		checkPointCareTaker = new CheckPointCareTaker();
+		setCheckPoint();
+	}
+
+	public static void setCheckPoint()
+	{
+		instance.checkPointCareTaker.Memento = instance.checkPointOriginator.CreateMemento();
+	}
+
+	public static void restoreCheckPoint()
+	{
+
+		instance.checkPointOriginator.SetMemento(instance.checkPointCareTaker.Memento);
 	}
 	
 	// Update is called once per frame
@@ -48,7 +69,8 @@ public class GameManager : MonoBehaviour {
 		}	
 	}
 
-	void UpdatePlaying(){
+	void UpdatePlaying()
+	{
 	}
 
 	void UpdatePaused(){
