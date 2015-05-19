@@ -7,14 +7,19 @@ public class ArrowBehaviour : MonoBehaviour {
 	private bool hasLanded = false;
 	Rigidbody2D body;
 	BoxCollider2D collider;
+	[Range(5,30)]
+	public float timeAlive =5;
+	private float timer;
 	// Use this for initialization
 	void Start () {
 		body = GetComponent<Rigidbody2D>();
 		collider = GetComponent<BoxCollider2D>();
+		timer = timeAlive;
 	}
 	
 	// Update is called once per frame
-	void Update () {
+	void Update () 
+	{
 		if(!hasLanded)
 		{
 			transform.position = transform.position + transform.right * speed* Time.deltaTime;
@@ -25,7 +30,11 @@ public class ArrowBehaviour : MonoBehaviour {
 			else rot.z-=60*Time.deltaTime;
 			transform.eulerAngles = rot;
 		}
-
+		timer-= Time.deltaTime;
+		if(timer<=0)
+		{
+			Destroy(gameObject);
+		}
 	}
 
 	public void OnCollisionEnter2D(Collision2D collider)

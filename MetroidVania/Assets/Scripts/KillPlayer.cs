@@ -8,6 +8,6 @@ public class KillPlayer : MonoBehaviour {
 	public void OnTriggerEnter2D(Collider2D collider)
 	{
 		if(collider.gameObject.name=="Player")
-			GameManager.restoreCheckPoint();
+			collider.gameObject.GetComponent<DieBehaviour>().KillPlayer("you fell down the pitt of doom");
 	}
 }
