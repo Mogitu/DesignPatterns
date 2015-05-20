@@ -34,22 +34,17 @@ public class GameManager : MonoBehaviour {
 		instance = this;
 	}
 
-	// Use this for initialization
-	void Start () 
-	{
-		checkPointOriginator = GameObject.Find("Player").GetComponent<CheckPointOriginator>();
-		checkPointCareTaker = new CheckPointCareTaker();
-		setCheckPoint();
-	}
-
 	public static void setCheckPoint()
 	{
+		if(instance.checkPointOriginator ==null)
+			instance.checkPointOriginator = GameObject.Find("Player").GetComponent<CheckPointOriginator>();
+		if(instance.checkPointCareTaker == null)
+			instance.checkPointCareTaker = new CheckPointCareTaker();
 		instance.checkPointCareTaker.Memento = instance.checkPointOriginator.CreateMemento();
 	}
 
 	public static void restoreCheckPoint()
 	{
-
 		instance.checkPointOriginator.SetMemento(instance.checkPointCareTaker.Memento);
 	}
 	

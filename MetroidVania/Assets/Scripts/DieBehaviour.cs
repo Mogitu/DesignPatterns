@@ -4,6 +4,7 @@ using System.Collections;
 public class DieBehaviour : MonoBehaviour {
 	
 	private Animator animator;
+	private bool isDying = false;
 	// Use this for initialization
 	void Start () {
 		animator = GetComponent<Animator>();
@@ -17,15 +18,16 @@ public class DieBehaviour : MonoBehaviour {
 
 	public void KillPlayer(string reason)
 	{
-		if(animator.GetBool("Kill"))return;
+		if(animator.GetBool("Kill") || isDying)return;
+		isDying = true;
 		print("You got killed because " + reason);
-		animator.SetBool("Kill",true);
+		animator.SetTrigger("Kill");
 	}
 
 	public void resetPosition()
 	{
 		print ("You are back at the last spawnpoint");
 		GameManager.restoreCheckPoint();
-		animator.SetBool("Kill",false);
+		isDying = false;
 	}
 }

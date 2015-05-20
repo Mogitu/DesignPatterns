@@ -44,13 +44,13 @@ public class AIBehaviour : MonoBehaviour {
 				else
 					x = -1;
 				
-				m_Character.Move(x, false, false);
+				m_Character.Move(x, false, false,false);
 			}
 			else
-				m_Character.Move(0, false, false);
+				m_Character.Move(0, false, false,false);
 		}
 		else
-			m_Character.Move(0, false, false);
+			m_Character.Move(0, false, false,false);
 	}
 
 	void OnTriggerEnter2D(Collider2D other)

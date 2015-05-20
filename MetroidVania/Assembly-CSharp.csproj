@@ -64,8 +64,12 @@
      <Compile Include="Assets\Scripts\Patterns\ObjectPool\ObjectPool.cs" />
      <Compile Include="Assets\Scripts\Patterns\ObjectPool\TestObject.cs" />
      <Compile Include="Assets\Scripts\Patterns\Prototype\ArrowBehaviour.cs" />
-     <Compile Include="Assets\Scripts\Patterns\Prototype\ShootBehaviour.cs" />
      <Compile Include="Assets\Scripts\Patterns\Singleton\GameManager.cs" />
+     <Compile Include="Assets\Scripts\Patterns\State\AIState.cs" />
+     <Compile Include="Assets\Scripts\Patterns\State\EnemyController.cs" />
+     <Compile Include="Assets\Scripts\Patterns\State\EnemyPathFinding.cs" />
+     <Compile Include="Assets\Scripts\Patterns\State\IdleAIState.cs" />
+     <Compile Include="Assets\Scripts\Patterns\State\WalkAIState.cs" />
      <Compile Include="Assets\Scripts\Player.cs" />
      <None Include="Assets\Standard Assets\CrossPlatformInput\CrossPlatformInputGuidelines.txt" />
      <None Include="Assets\Standard Assets\Cameras\CameraGuidelines.txt" />
