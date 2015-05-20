@@ -6,11 +6,17 @@ using UnityStandardAssets._2D;
 
 public class EnemyController : MonoBehaviour {
 
-	GameObject player;
+	public GameObject player;
 	private AIState state;
 	private EnemyPathFinding pathfinding;
 	[HideInInspector]
 	public PlatformerCharacter2D character;
+	[Range(8,60)]
+	public float attackDistance = 5;
+	[Range(2,5)]
+	public float maxHeightDistance = 2;
+	public bool incomingArrow = false;
+
 	// Use this for initialization
 	void Start () {
 		player =  GameObject.Find("Player");
@@ -22,7 +28,10 @@ public class EnemyController : MonoBehaviour {
 	// Update is called once per frame
 	void Update () 
 	{
-		state.Handle(this,pathfinding);
+		//Currently disabled since it fails..
+		//state.Handle(this,pathfinding,incomingArrow);
+		state.Handle(this,pathfinding,false);
+		incomingArrow = false;
 	}
 
 	public AIState State
@@ -31,5 +40,12 @@ public class EnemyController : MonoBehaviour {
 		set{state = value;
 			state.init(this,pathfinding);
 		}
+	}
+
+	public bool isPlayerNearAndTargetable()
+	{
+		if(Vector3.Distance(player.transform.position,transform.position)<attackDistance && Mathf.Abs(player.transform.position.y - transform.position.y)<maxHeightDistance)
+			return true;
+		return false;
 	}
 }

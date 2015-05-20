@@ -48,6 +48,7 @@
   <ItemGroup>
      <Compile Include="Assets\Scripts\AIBehaviour.cs" />
      <Compile Include="Assets\Scripts\Achievement.cs" />
+     <Compile Include="Assets\Scripts\Blood.cs" />
      <Compile Include="Assets\Scripts\DieBehaviour.cs" />
      <Compile Include="Assets\Scripts\IObserver.cs" />
      <Compile Include="Assets\Scripts\KillPlayer.cs" />
@@ -66,6 +67,8 @@
      <Compile Include="Assets\Scripts\Patterns\Prototype\ArrowBehaviour.cs" />
      <Compile Include="Assets\Scripts\Patterns\Singleton\GameManager.cs" />
      <Compile Include="Assets\Scripts\Patterns\State\AIState.cs" />
+     <Compile Include="Assets\Scripts\Patterns\State\AttackAIState.cs" />
+     <Compile Include="Assets\Scripts\Patterns\State\AvoidAIState.cs" />
      <Compile Include="Assets\Scripts\Patterns\State\EnemyController.cs" />
      <Compile Include="Assets\Scripts\Patterns\State\EnemyPathFinding.cs" />
      <Compile Include="Assets\Scripts\Patterns\State\IdleAIState.cs" />

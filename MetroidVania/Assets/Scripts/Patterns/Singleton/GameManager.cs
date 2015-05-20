@@ -34,6 +34,11 @@ public class GameManager : MonoBehaviour {
 		instance = this;
 	}
 
+	void Start()
+	{
+		setCheckPoint();
+	}
+
 	public static void setCheckPoint()
 	{
 		if(instance.checkPointOriginator ==null)

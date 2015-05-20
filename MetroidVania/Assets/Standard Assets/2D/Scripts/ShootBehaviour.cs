@@ -11,6 +11,8 @@ namespace UnityStandardAssets._2D
 		private Animator animator;
 		private Transform releasePoint;
 		public GameObject arrowPrefab;
+
+		private bool gonnaShoot = false;
 		// Use this for initialization
 		void Start () 
 		{
@@ -25,18 +27,22 @@ namespace UnityStandardAssets._2D
 		// Update is called once per frame
 		void Update () {
 			if(timeSinceLastShot>0)timeSinceLastShot-=Time.deltaTime;
+			if(gonnaShoot && timeSinceLastShot<=0)
+			{
+				animator.SetBool("Shoot",true);
+				timeSinceLastShot = timeBetweenShooting;
+			}
+			gonnaShoot = false;
 		}
 
 		public void Shoot()
 		{
-			if(timeSinceLastShot<=0)
-			{
-				animator.SetTrigger("Shoot");
-			}
+			gonnaShoot = true;
 		}
 
 		public void ShootArrow()
 		{
+			animator.SetBool("Shoot",false);
 			if(GetComponent<PlatformerCharacter2D>().m_FacingRight)Instantiate(arrowPrefab,releasePoint.position,releasePoint.rotation);
 			else
 			{

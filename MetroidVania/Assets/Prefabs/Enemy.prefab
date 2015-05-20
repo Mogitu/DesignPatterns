@@ -89,7 +89,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 134750}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -68.9670868, y: 10.3554392, z: 0}
+  m_LocalPosition: {x: -62.6599998, y: 1.66999996, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 464414}
@@ -171,7 +171,7 @@ Animator:
   m_GameObject: {fileID: 134750}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 0e43e70c35dfe114680dd84201c8f508, type: 2}
+  m_Controller: {fileID: 9100000, guid: c7fc49c346620e942bd8dc341986cd35, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 1
   m_ApplyRootMotion: 0
@@ -227,7 +227,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a4878fc60a2e64043a83d4046ea2836b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 0}
   character: {fileID: 0}
+  attackDistance: 27.8999996
+  maxHeightDistance: 2
+  incomingArrow: 0
 --- !u!114 &11494450
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -271,7 +275,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1783731295
   m_SortingOrder: 2
-  m_Sprite: {fileID: 21300000, guid: ce44c63bc17787344b4e2e884f2056af, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 842ec4c12ffafa148952cb4875854154, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1001 &100100000
 Prefab:

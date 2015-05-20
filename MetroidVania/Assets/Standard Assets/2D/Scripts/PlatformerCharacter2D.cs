@@ -19,7 +19,11 @@ namespace UnityStandardAssets._2D
 		{
 			get{return .2f;}
 		}//= .2f; // Radius of the overlap circle to determine if grounded
-        private bool m_Grounded;            // Whether or not the player is grounded.
+        private bool m_Grounded; 
+		public bool Grounded
+		{
+			get{return m_Grounded;}
+		}// Whether or not the player is grounded.
         private Transform m_CeilingCheck;   // A position marking where to check for ceilings
         const float k_CeilingRadius = .01f; // Radius of the overlap circle to determine if the player can stand up
         private Animator m_Anim;            // Reference to the player's animator component.
@@ -58,7 +62,6 @@ namespace UnityStandardAssets._2D
 
         public void Move(float move, bool crouch, bool jump,bool shoot)
         {
-			if(shoot)m_Anim.SetTrigger("Shoot");
             // If crouching, check to see if the character can stand up
             if (!crouch && m_Anim.GetBool("Crouch"))
             {
@@ -94,10 +97,11 @@ namespace UnityStandardAssets._2D
                 {
                     // ... flip the player.
                     Flip();
-                }
-            }
+				}
+			}
+			if(m_Grounded && shoot)GetComponent<ShootBehaviour>().Shoot();
             // If the player should jump...
-            if (m_Grounded && jump && m_Anim.GetBool("Ground"))
+            if (m_Grounded && jump && !m_Anim.GetBool("Shoot"))
             {
 				m_Anim.SetBool("Jump",true);
             }

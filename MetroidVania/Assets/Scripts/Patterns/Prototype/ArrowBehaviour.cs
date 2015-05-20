@@ -2,14 +2,22 @@
 using System.Collections;
 
 public class ArrowBehaviour : MonoBehaviour {
-
+	[Range(15,60)]
 	public float speed = 30;
+	[Range(5,60)]
+	public float upwardDrag = 30;
+	[Range(5,90)]
+	public float downwardDrag = 60;
 	private bool hasLanded = false;
 	Rigidbody2D body;
 	BoxCollider2D collider;
 	[Range(5,30)]
 	public float timeAlive =5;
 	private float timer;
+	public LayerMask whatCanIHit;
+	[Range(5,30)]
+	public float avoidDistanceEnemies = 5;
+	public GameObject blood;
 	// Use this for initialization
 	void Start () {
 		body = GetComponent<Rigidbody2D>();
@@ -24,11 +32,16 @@ public class ArrowBehaviour : MonoBehaviour {
 		{
 			transform.position = transform.position + transform.right * speed* Time.deltaTime;
 			Vector3 rot = transform.eulerAngles;
-			if(rot.z<90)rot.z-= 30*Time.deltaTime;
-			else if(rot.z<180)rot.z+=30*Time.deltaTime;
-			else if(rot.z<270)rot.z+=60*Time.deltaTime;
-			else rot.z-=60*Time.deltaTime;
+			if(rot.z<90)rot.z-= upwardDrag*Time.deltaTime;
+			else if(rot.z<180)rot.z+=upwardDrag*Time.deltaTime;
+			else if(rot.z<270)rot.z+=downwardDrag*Time.deltaTime;
+			else rot.z-=downwardDrag*Time.deltaTime;
 			transform.eulerAngles = rot;
+			RaycastHit2D hit =   Physics2D.Raycast(transform.position,transform.right,avoidDistanceEnemies,whatCanIHit);
+			Debug.DrawLine(transform.position,transform.position+transform.right*avoidDistanceEnemies,Color.blue);
+			if(hit.collider !=null)
+				if(hit.collider.gameObject.GetComponent<EnemyController>()!=null)
+					hit.collider.gameObject.GetComponent<EnemyController>().incomingArrow = true;
 		}
 		timer-= Time.deltaTime;
 		if(timer<=0)
@@ -40,14 +53,16 @@ public class ArrowBehaviour : MonoBehaviour {
 	public void OnCollisionEnter2D(Collision2D collider)
 	{
 		if(hasLanded)return;
-		if(collider.gameObject.name=="Player")
-			GameManager.restoreCheckPoint();
-		else
+		DieBehaviour die = collider.gameObject.GetComponent<DieBehaviour>();
+		if(die!= null)
 		{
-			hasLanded = true;
-			body.isKinematic = true;
-			this.collider.enabled = false;
-			transform.parent = collider.transform;
+			Instantiate(blood,collider.contacts[0].point,Quaternion.identity);
+			die.Kill(" got hit by an arrow");
 		}
+		
+		hasLanded = true;
+		body.isKinematic = true;
+		this.collider.enabled = false;
+		transform.parent = collider.transform;
 	}
 }

@@ -12,7 +12,7 @@ GameObject:
   - 61: {fileID: 6110514}
   - 114: {fileID: 11484818}
   - 50: {fileID: 5073164}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Arrow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -40,7 +40,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: .0500000007
-  m_GravityScale: 1
+  m_GravityScale: .200000003
   m_FixedAngle: 0
   m_IsKinematic: 0
   m_Interpolate: 0
@@ -70,8 +70,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7f78c090ed88f8843bd79acd3707d64f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 45
+  speed: 24
+  upwardDrag: 16.1000004
+  downwardDrag: 31
   timeAlive: 10.8000002
+  whatCanIHit:
+    serializedVersion: 2
+    m_Bits: 256
+  avoidDistanceEnemies: 13.3999996
+  blood: {fileID: 113512, guid: 3eaeacb1017a58e428b0a7d364952bd9, type: 2}
 --- !u!212 &21270194
 SpriteRenderer:
   m_ObjectHideFlags: 1

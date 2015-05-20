@@ -16,11 +16,11 @@ public class DieBehaviour : MonoBehaviour {
 	
 	}
 
-	public void KillPlayer(string reason)
+	public void Kill(string reason)
 	{
 		if(animator.GetBool("Kill") || isDying)return;
 		isDying = true;
-		print("You got killed because " + reason);
+		print(gameObject + " got killed because " + gameObject + " " + reason);
 		animator.SetTrigger("Kill");
 	}
 
@@ -29,5 +29,10 @@ public class DieBehaviour : MonoBehaviour {
 		print ("You are back at the last spawnpoint");
 		GameManager.restoreCheckPoint();
 		isDying = false;
+	}
+
+	public void removeFromGame()
+	{
+		Destroy(gameObject);
 	}
 }
