@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Blood : MonoBehaviour {
+public class PSEffect : MonoBehaviour {
 
 	ParticleSystem ps;
 	// Use this for initialization

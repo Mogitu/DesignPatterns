@@ -48,10 +48,10 @@
   <ItemGroup>
      <Compile Include="Assets\Scripts\AIBehaviour.cs" />
      <Compile Include="Assets\Scripts\Achievement.cs" />
-     <Compile Include="Assets\Scripts\Blood.cs" />
      <Compile Include="Assets\Scripts\DieBehaviour.cs" />
      <Compile Include="Assets\Scripts\IObserver.cs" />
      <Compile Include="Assets\Scripts\KillPlayer.cs" />
+     <Compile Include="Assets\Scripts\PSEffect.cs" />
      <Compile Include="Assets\Scripts\Patterns\Command\Command.cs" />
      <Compile Include="Assets\Scripts\Patterns\Command\InputHandler.cs" />
      <Compile Include="Assets\Scripts\Patterns\Command\JumpCommand.cs" />
