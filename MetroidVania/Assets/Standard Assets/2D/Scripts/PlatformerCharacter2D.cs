@@ -65,7 +65,7 @@ namespace UnityStandardAssets._2D
             m_Anim.SetBool("Crouch", crouch);
 
             //only control the player if grounded or airControl is turned on
-            if (m_Grounded || m_AirControl)
+            if ((m_Grounded || m_AirControl) && !m_Anim.GetBool("Jump"))
             {
                 // Reduce the speed if crouching by the crouchSpeed multiplier
                 move = (crouch ? move*m_CrouchSpeed : move);
@@ -92,10 +92,7 @@ namespace UnityStandardAssets._2D
             // If the player should jump...
             if (m_Grounded && jump && m_Anim.GetBool("Ground"))
             {
-                // Add a vertical force to the player.
-                m_Grounded = false;
-                m_Anim.SetBool("Ground", false);
-                m_Rigidbody2D.AddForce(new Vector2(0f, m_JumpForce));
+				m_Anim.SetBool("Jump",true);
             }
         }
 
@@ -110,5 +107,14 @@ namespace UnityStandardAssets._2D
             theScale.x *= -1;
             transform.localScale = theScale;
         }
-    }
+
+		public void Jump()
+		{
+			// Add a vertical force to the player.
+			m_Grounded = false;
+			m_Anim.SetBool("Ground", false);
+			m_Anim.SetBool("Jump", false);
+			m_Rigidbody2D.AddForce(new Vector2(0f, m_JumpForce));
+		}
+	}
 }
