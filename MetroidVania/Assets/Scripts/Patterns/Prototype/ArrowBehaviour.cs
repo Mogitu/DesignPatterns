@@ -38,7 +38,6 @@ public class ArrowBehaviour : MonoBehaviour {
 			else rot.z-=downwardDrag*Time.deltaTime;
 			transform.eulerAngles = rot;
 			RaycastHit2D hit =   Physics2D.Raycast(transform.position,transform.right,avoidDistanceEnemies,whatCanIHit);
-			Debug.DrawLine(transform.position,transform.position+transform.right*avoidDistanceEnemies,Color.blue);
 			if(hit.collider !=null)
 				if(hit.collider.gameObject.GetComponent<EnemyController>()!=null)
 					hit.collider.gameObject.GetComponent<EnemyController>().incomingArrow = true;

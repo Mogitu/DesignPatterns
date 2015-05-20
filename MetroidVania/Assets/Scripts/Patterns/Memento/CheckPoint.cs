@@ -9,7 +9,7 @@ public class CheckPoint : MonoBehaviour {
 		if(collider.gameObject.name=="Player")
 		{
 			GameManager.setCheckPoint();
-			Instantiate(runPastParticles,transform.position+Vector3.up*0.2f,Quaternion.identity);
+			Instantiate(runPastParticles,transform.position+new Vector3(0,0.2f,0.1f),Quaternion.identity);
 		}
 	}
 }
