@@ -35,11 +35,16 @@ abstract public class Achievement : Observer
 
 	public void unlock()
 	{
-		//Show Achievement
+		// TODO: Not need anymore?
+		Unlocked = true;
+
+		// Show Achievement
 		text.enabled = true;
 		GetComponent<SlideInText>().enabled = true;
 		text.text = Name;
 
+		// Detach because we don't have to update the achievement anymore
+		enSubject.detach(this);
 	}
 }
 

@@ -26,10 +26,8 @@ abstract public class Subject : MonoBehaviour
 
 	public void notify()
 	{
-		foreach (Observer ob in observers) 
-		{
-			ob.refresh();
-		}
+		for (int i = 0; i < observers.Count; i++)
+			observers[i].refresh();
 	}
 
 }
