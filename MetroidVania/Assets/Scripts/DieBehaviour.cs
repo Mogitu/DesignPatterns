@@ -34,6 +34,10 @@ public class DieBehaviour : MonoBehaviour {
 
 	public void removeFromGame()
 	{
+		EnemySubject eSub = GetComponent<EnemySubject>();
+		if(eSub)
+			eSub.enemyState = EnemyState.KILLED;
+
 		Destroy(gameObject);
 	}
 }
