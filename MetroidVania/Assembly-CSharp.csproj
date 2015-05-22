@@ -58,7 +58,7 @@
      <Compile Include="Assets\Scripts\Patterns\Command\WalkLeftCommand.cs" />
      <Compile Include="Assets\Scripts\Patterns\Command\WalkRightCommand.cs" />
      <Compile Include="Assets\Scripts\Patterns\Factory\Creator.cs" />
-     <Compile Include="Assets\Scripts\Patterns\Factory\Factory.cs" />
+     <Compile Include="Assets\Scripts\Patterns\Factory\FactoryBehaviour.cs" />
      <Compile Include="Assets\Scripts\Patterns\Factory\Product.cs" />
      <Compile Include="Assets\Scripts\Patterns\Factory\propsCreator.cs" />
      <Compile Include="Assets\Scripts\Patterns\Factory\propsProduct.cs" />
@@ -79,7 +79,6 @@
      <Compile Include="Assets\Scripts\Patterns\State\IdleAIState.cs" />
      <Compile Include="Assets\Scripts\Patterns\State\WalkAIState.cs" />
      <Compile Include="Assets\Scripts\Player.cs" />
-     <Compile Include="Assets\Scripts\TestScript.cs" />
      <None Include="Assets\Standard Assets\CrossPlatformInput\CrossPlatformInputGuidelines.txt" />
      <None Include="Assets\Standard Assets\Cameras\CameraGuidelines.txt" />
  <Reference Include="UnityEngine.UI">
