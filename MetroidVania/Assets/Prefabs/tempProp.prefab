@@ -9,7 +9,6 @@ GameObject:
   m_Component:
   - 4: {fileID: 477406}
   - 212: {fileID: 21297088}
-  - 114: {fileID: 11474402}
   m_Layer: 0
   m_Name: tempProp
   m_TagString: tempProp
@@ -29,24 +28,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
---- !u!114 &11474402
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 179836}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ab5e76d5d011ca2499257538ddc4638e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  testFloat: 6
-  testFloat2: 6
-  testString: tesetets
-  propSprites:
-  - {fileID: 21300000, guid: aa831a4f00d8dc54783ff4ade6175877, type: 3}
-  - {fileID: 21300000, guid: b1d17b0607316d54ab62c1fe76904805, type: 3}
-  - {fileID: 21300000, guid: fef2496a2723d09458aa3ab6fa0f5a28, type: 3}
 --- !u!212 &21297088
 SpriteRenderer:
   m_ObjectHideFlags: 1

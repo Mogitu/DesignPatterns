@@ -9,6 +9,7 @@ public class DieBehaviour : MonoBehaviour {
 	void Start () {
 		animator = GetComponent<Animator>();
 		animator.SetBool("Kill",false);
+
 	}
 	
 	// Update is called once per frame

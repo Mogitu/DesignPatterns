@@ -9,8 +9,7 @@ public class ArrowBehaviour : MonoBehaviour {
 	[Range(5,90)]
 	public float downwardDrag = 60;
 	private bool hasLanded = false;
-	Rigidbody2D body;
-	BoxCollider2D collider;
+	Rigidbody2D body;	BoxCollider2D collider;
 	[Range(5,30)]
 	public float timeAlive =5;
 	private float timer;
@@ -20,7 +19,6 @@ public class ArrowBehaviour : MonoBehaviour {
 	public GameObject blood;
 	// Use this for initialization
 	void Start () {
-		body = GetComponent<Rigidbody2D>();
 		collider = GetComponent<BoxCollider2D>();
 		timer = timeAlive;
 	}
@@ -52,15 +50,20 @@ public class ArrowBehaviour : MonoBehaviour {
 	public void OnCollisionEnter2D(Collision2D collider)
 	{
 		if(hasLanded)return;
+		hasLanded = true;
 		DieBehaviour die = collider.gameObject.GetComponent<DieBehaviour>();
-		if(die!= null)
+		ArrowBehaviour arr = collider.gameObject.GetComponent<ArrowBehaviour>();
+		if(die!= null || arr != null)
+			Destroy(gameObject);
+		if(die!=null)
 		{
 			Instantiate(blood,collider.contacts[0].point,Quaternion.identity);
 			die.Kill(" got hit by an arrow");
 		}
-		
-		hasLanded = true;
-		body.isKinematic = true;
+		if(die!= null || arr != null)
+			Destroy(gameObject);
+
+		GetComponent<Rigidbody2D>().isKinematic = true;
 		this.collider.enabled = false;
 		transform.parent = collider.transform;
 	}

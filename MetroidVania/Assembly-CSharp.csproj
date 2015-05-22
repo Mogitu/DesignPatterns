@@ -39,10 +39,10 @@
 	<Reference Include="System.Core" />
 	<Reference Include="System.Xml.Linq" />
 	<Reference Include="UnityEngine">
-	  <HintPath>D:/Unity Engine/Editor/Data/Managed/UnityEngine.dll</HintPath>
+	  <HintPath>D:/Program Files (x86)/Unity/Editor/Data/Managed/UnityEngine.dll</HintPath>
 	</Reference>
 	<Reference Include="UnityEditor">
-	  <HintPath>D:/Unity Engine/Editor/Data/Managed/UnityEditor.dll</HintPath>
+	  <HintPath>D:/Program Files (x86)/Unity/Editor/Data/Managed/UnityEditor.dll</HintPath>
 	</Reference>
   </ItemGroup>
   <ItemGroup>
@@ -57,6 +57,12 @@
      <Compile Include="Assets\Scripts\Patterns\Command\JumpCommand.cs" />
      <Compile Include="Assets\Scripts\Patterns\Command\WalkLeftCommand.cs" />
      <Compile Include="Assets\Scripts\Patterns\Command\WalkRightCommand.cs" />
+     <Compile Include="Assets\Scripts\Patterns\Decorator\Component.cs" />
+     <Compile Include="Assets\Scripts\Patterns\Decorator\JumpHigherPowerUp.cs" />
+     <Compile Include="Assets\Scripts\Patterns\Decorator\PowerUp.cs" />
+     <Compile Include="Assets\Scripts\Patterns\Decorator\PowerUpBehaviour.cs" />
+     <Compile Include="Assets\Scripts\Patterns\Decorator\PowerUpController.cs" />
+     <Compile Include="Assets\Scripts\Patterns\Decorator\WalkFasterPowerUp.cs" />
      <Compile Include="Assets\Scripts\Patterns\Factory\Creator.cs" />
      <Compile Include="Assets\Scripts\Patterns\Factory\Factory.cs" />
      <Compile Include="Assets\Scripts\Patterns\Factory\Product.cs" />
@@ -83,10 +89,10 @@
      <None Include="Assets\Standard Assets\CrossPlatformInput\CrossPlatformInputGuidelines.txt" />
      <None Include="Assets\Standard Assets\Cameras\CameraGuidelines.txt" />
  <Reference Include="UnityEngine.UI">
- <HintPath>D:/Unity Engine/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
+ <HintPath>D:/Program Files (x86)/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>
  <Reference Include="UnityEditor.iOS.Extensions.Xcode">
- <HintPath>D:/Unity Engine/Editor/Data/PlaybackEngines/iossupport/UnityEditor.iOS.Extensions.Xcode.dll</HintPath>
+ <HintPath>D:/Program Files (x86)/Unity/Editor/Data/PlaybackEngines/iossupport/UnityEditor.iOS.Extensions.Xcode.dll</HintPath>
  </Reference>
   </ItemGroup>
   <ItemGroup>

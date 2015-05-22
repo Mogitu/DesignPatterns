@@ -2,10 +2,7 @@
 using System.Collections;
 
 public class TestScript : MonoBehaviour {
-	propsCreator creator;public float testFloat = 6;
-	[Range(0,30)]
-	public float testFloat2 = 6;
-	public string testString = "tesetets";
+	propsCreator creator;
 	public Sprite[] propSprites;
 	// Use this for initialization
 	void Start () {
