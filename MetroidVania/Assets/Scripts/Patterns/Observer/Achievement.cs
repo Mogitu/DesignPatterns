@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
 
 abstract public class Achievement : Observer
@@ -8,6 +9,12 @@ abstract public class Achievement : Observer
 
 	private EnemyState enState;
 	private EnemySubject enSubject;
+	private Text text;
+
+	void Start()
+	{
+		text = GetComponent<Text>();
+	}
 
 	public override void refresh ()
 	{
@@ -29,7 +36,10 @@ abstract public class Achievement : Observer
 	public void unlock()
 	{
 		//Show Achievement
-		print(Name);
+		text.enabled = true;
+		GetComponent<SlideInText>().enabled = true;
+		text.text = Name;
+
 	}
 }
 
