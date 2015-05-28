@@ -53,18 +53,16 @@ public class ArrowBehaviour : MonoBehaviour {
 		hasLanded = true;
 		DieBehaviour die = collider.gameObject.GetComponent<DieBehaviour>();
 		ArrowBehaviour arr = collider.gameObject.GetComponent<ArrowBehaviour>();
-		if(die!= null || arr != null)
-			Destroy(gameObject);
 		if(die!=null)
 		{
 			Instantiate(blood,collider.contacts[0].point,Quaternion.identity);
 			die.Kill(" got hit by an arrow");
 		}
-		if(die!= null || arr != null)
+		if(arr != null)
 			Destroy(gameObject);
-
-		GetComponent<Rigidbody2D>().isKinematic = true;
+		
 		this.collider.enabled = false;
+		GetComponent<Rigidbody2D>().isKinematic = true;
 		transform.parent = collider.transform;
 	}
 }
