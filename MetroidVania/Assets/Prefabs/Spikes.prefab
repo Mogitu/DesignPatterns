@@ -1,67 +1,67 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &141878
+--- !u!1 &131848
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 4
   m_Component:
-  - 4: {fileID: 468214}
-  - 212: {fileID: 21233460}
-  - 114: {fileID: 11444704}
-  - 61: {fileID: 6181104}
+  - 4: {fileID: 453294}
+  - 212: {fileID: 21240080}
+  - 61: {fileID: 6125974}
+  - 114: {fileID: 11441916}
   m_Layer: 0
-  m_Name: DeadCollider
+  m_Name: Spikes
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &468214
+--- !u!4 &453294
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 141878}
+  m_GameObject: {fileID: 131848}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 34.5999985, y: 12.6000004, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1.60659492, y: 1.70827866, z: 1.62693167}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
---- !u!61 &6181104
+--- !u!61 &6125974
 BoxCollider2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 141878}
+  m_GameObject: {fileID: 131848}
   m_Enabled: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Size: {x: 2.55999994, y: 2.55999994}
---- !u!114 &11444704
+  m_Size: {x: 1.35000014, y: 1.56000018}
+--- !u!114 &11441916
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 141878}
+  m_GameObject: {fileID: 131848}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: da55832f335ba384d98953afbf9e764f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  deadReason: 
-  blood: {fileID: 0}
---- !u!212 &21233460
+  deadReason: by spikes.
+  blood: {fileID: 113512, guid: 3eaeacb1017a58e428b0a7d364952bd9, type: 2}
+--- !u!212 &21240080
 SpriteRenderer:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 141878}
+  m_GameObject: {fileID: 131848}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -80,8 +80,8 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 0966d02067ecf8344b4a9c5a58f64068, type: 3}
-  m_Color: {r: .79411763, g: 0, b: 0, a: 1}
+  m_Sprite: {fileID: 21300000, guid: 6ffee87b90c43c744bc7590853019c60, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
@@ -91,5 +91,5 @@ Prefab:
     m_Modifications: []
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 141878}
+  m_RootGameObject: {fileID: 131848}
   m_IsPrefabParent: 1

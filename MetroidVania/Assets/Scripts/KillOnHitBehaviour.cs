@@ -3,11 +3,13 @@ using System.Collections;
 
 public class KillOnHitBehaviour : MonoBehaviour {
 
-	
+	public string deadReason;
+	public GameObject blood;
 	
 	public void OnTriggerEnter2D(Collider2D collider)
 	{
 		DieBehaviour die = collider.gameObject.GetComponent<DieBehaviour>();
-		if(die)die.Kill("fell down the pitt of doom");
+		Instantiate(blood,transform.position,Quaternion.identity);
+		if(die)die.Kill(deadReason);
 	}
 }
