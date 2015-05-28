@@ -42,7 +42,7 @@ public class GameManager : MonoBehaviour {
 	public static void setCheckPoint()
 	{
 		if(instance.checkPointOriginator ==null)
-			instance.checkPointOriginator = GameObject.Find("Player").GetComponent<CheckPointOriginator>();
+			instance.checkPointOriginator = GameObject.FindGameObjectWithTag("Player").GetComponent<CheckPointOriginator>();
 		if(instance.checkPointCareTaker == null)
 			instance.checkPointCareTaker = new CheckPointCareTaker();
 		instance.checkPointCareTaker.Memento = instance.checkPointOriginator.CreateMemento();

@@ -19,8 +19,6 @@ public class PowerUpBehaviour : MonoBehaviour
 	{
 		controller = new PowerUpController(this);
 		character = GetComponent<PlatformerCharacter2D>();
-		AddPowerUp(PowerUpType.JUMPHIGHER,10);
-		AddPowerUp(PowerUpType.WALKFASTER,10);
 	}
 	
 	// Update is called once per frame

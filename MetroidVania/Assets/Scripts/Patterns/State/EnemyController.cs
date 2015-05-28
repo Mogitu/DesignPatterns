@@ -19,7 +19,7 @@ public class EnemyController : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		player =  GameObject.Find("Player");
+		player =  GameObject.FindGameObjectWithTag("Player");
 		State = new IdleAIState();
 		pathfinding = GetComponent<EnemyPathFinding>();
 		character = GetComponent<PlatformerCharacter2D>();
