@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 
 public class JumpCommand : Command
@@ -9,7 +9,7 @@ public class JumpCommand : Command
 		Player script = obj.GetComponent<Player> ();
 		//can only jump when we the player isnt currently falling or jumping.
 		if (Mathf.Abs (body.velocity.y) <= 0.01) {
-			body.AddForce (Vector2.up * script.jumpPower);
+			body.AddForce (Vector2.up * script.JumpForce);
 		}
 	}
 }

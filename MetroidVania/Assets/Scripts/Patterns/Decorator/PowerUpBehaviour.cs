@@ -1,8 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
 using Decorator;
-using UnityStandardAssets._2D;
-[RequireComponent(typeof (PlatformerCharacter2D))]
+
+[RequireComponent(typeof (Player))]
 public class PowerUpBehaviour : MonoBehaviour 
 {
 	public enum PowerUpType
@@ -13,12 +13,12 @@ public class PowerUpBehaviour : MonoBehaviour
 	}
 	public Decorator.Component controller;
 	[HideInInspector]
-	public PlatformerCharacter2D character;
+	public Player character;
 	// Use this for initialization
 	void Start () 
 	{
 		controller = new PowerUpController(this);
-		character = GetComponent<PlatformerCharacter2D>();
+		character = GetComponent<Player>();
 	}
 	
 	// Update is called once per frame

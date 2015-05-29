@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 
 public class WalkLeftCommand : Command
@@ -8,6 +8,6 @@ public class WalkLeftCommand : Command
 		Player script = obj.GetComponent<Player> ();
 		obj.transform.localScale = new Vector2 (-1, 1);
 		script.Animator.SetBool("walking",true);
-		script.ForceX = -script.walkSpeed;
+		script.ForceX = -script.MaxSpeed;
 	}
 }

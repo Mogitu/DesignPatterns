@@ -68,6 +68,7 @@
      <Compile Include="Assets\Scripts\Patterns\Command\Command.cs" />
      <Compile Include="Assets\Scripts\Patterns\Command\InputHandler.cs" />
      <Compile Include="Assets\Scripts\Patterns\Command\JumpCommand.cs" />
+     <Compile Include="Assets\Scripts\Patterns\Command\ShootCommand.cs" />
      <Compile Include="Assets\Scripts\Patterns\Command\WalkLeftCommand.cs" />
      <Compile Include="Assets\Scripts\Patterns\Command\WalkRightCommand.cs" />
      <Compile Include="Assets\Scripts\Patterns\Decorator\Component.cs" />
@@ -105,13 +106,13 @@
      <Compile Include="Assets\Scripts\Patterns\State\IdleAIState.cs" />
      <Compile Include="Assets\Scripts\Patterns\State\WalkAIState.cs" />
      <Compile Include="Assets\Scripts\Player.cs" />
+     <Compile Include="Assets\Scripts\Restarter.cs" />
      <Compile Include="Assets\Scripts\RotateObject.cs" />
+     <Compile Include="Assets\Scripts\ShootBehaviour.cs" />
      <Compile Include="Assets\Scripts\Standard Assets\Camera2DFollow.cs" />
      <Compile Include="Assets\Scripts\Standard Assets\CameraFollow.cs" />
      <Compile Include="Assets\Scripts\Standard Assets\Platformer2DUserControl.cs" />
      <Compile Include="Assets\Scripts\Standard Assets\PlatformerCharacter2D.cs" />
-     <Compile Include="Assets\Scripts\Standard Assets\Restarter.cs" />
-     <Compile Include="Assets\Scripts\Standard Assets\ShootBehaviour.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>

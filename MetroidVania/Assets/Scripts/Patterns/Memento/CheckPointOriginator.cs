@@ -6,7 +6,12 @@ public class CheckPointOriginator : MonoBehaviour {
 
 	public CheckPointMemento CreateMemento()
 	{
-		return new CheckPointMemento(transform.position,transform.rotation,transform.localScale,gameObject.GetComponent<PlatformerCharacter2D>().m_FacingRight);
+		bool facingRight=true;
+		if(gameObject.GetComponent<Player>().transform.localScale.x==-1)
+		{
+			facingRight=false;
+		}
+		return new CheckPointMemento(transform.position,transform.rotation,transform.localScale,facingRight);
 	}
 
 	public void SetMemento(CheckPointMemento memento)
@@ -14,6 +19,6 @@ public class CheckPointOriginator : MonoBehaviour {
 		transform.position = memento.LastPosition;
 		transform.rotation = memento.LastRotation;
 		transform.localScale = memento.LastSize;
-		gameObject.GetComponent<PlatformerCharacter2D>().m_FacingRight = memento.FacingRight;
+		//gameObject.GetComponent<Player>().m_FacingRight = memento.FacingRight;
 	}
 }
