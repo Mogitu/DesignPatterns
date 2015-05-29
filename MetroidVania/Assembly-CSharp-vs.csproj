@@ -46,6 +46,18 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\CrossPlatformInput\CrossPlatformInputInitialize.cs" />
+     <Compile Include="Assets\CrossPlatformInput\Scripts\AxisTouchButton.cs" />
+     <Compile Include="Assets\CrossPlatformInput\Scripts\ButtonHandler.cs" />
+     <Compile Include="Assets\CrossPlatformInput\Scripts\CrossPlatformInputManager.cs" />
+     <Compile Include="Assets\CrossPlatformInput\Scripts\InputAxisScrollbar.cs" />
+     <Compile Include="Assets\CrossPlatformInput\Scripts\Joystick.cs" />
+     <Compile Include="Assets\CrossPlatformInput\Scripts\MobileControlRig.cs" />
+     <Compile Include="Assets\CrossPlatformInput\Scripts\PlatformSpecific\MobileInput.cs" />
+     <Compile Include="Assets\CrossPlatformInput\Scripts\PlatformSpecific\StandaloneInput.cs" />
+     <Compile Include="Assets\CrossPlatformInput\Scripts\TiltInput.cs" />
+     <Compile Include="Assets\CrossPlatformInput\Scripts\TouchPad.cs" />
+     <Compile Include="Assets\CrossPlatformInput\Scripts\VirtualInput.cs" />
      <Compile Include="Assets\Scripts\AIBehaviour.cs" />
      <Compile Include="Assets\Scripts\DieBehaviour.cs" />
      <Compile Include="Assets\Scripts\IObserver.cs" />
@@ -106,10 +118,6 @@
  <Reference Include="UnityEditor.iOS.Extensions.Xcode">
  <HintPath>C:/Program Files/Unity/Editor/Data/PlaybackEngines/iossupport/UnityEditor.iOS.Extensions.Xcode.dll</HintPath>
  </Reference>
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="Assembly-CSharp-firstpass-vs.csproj">
-      <Project>{F0DD1E05-1D53-58FD-BD7C-0422BE5B4438}</Project>      <Name>Assembly-CSharp-firstpass-vs</Name>    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
