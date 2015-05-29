@@ -6,8 +6,6 @@ public class GameStartBehaviour : MonoBehaviour {
 	GameObject player;
 	float particleSize = 0.5f;
 	float particleSizeIncreasePerLayer = 0.75f;
-	bool inTransition = false;
-	bool isOn = true;
 	public float transitionTime = 3;
 	// Use this for initialization
 	void Start () 
@@ -42,7 +40,6 @@ public class GameStartBehaviour : MonoBehaviour {
 	
 	IEnumerator turnOff()
 	{
-		inTransition = true;
 		float timer = 1;
 		while(timer>0.1f)
 		{

@@ -54,7 +54,7 @@ public class GameEndBehaviour : MonoBehaviour {
 		isEnding = true;
 		player.GetComponent<Rigidbody2D>().isKinematic = true;
 		float timer = 1;
-		AsyncOperation async = Application.LoadLevelAsync("BasTestScene");
+		AsyncOperation async = Application.LoadLevelAsync(nextLevel);
 		async.allowSceneActivation = false;
 		while(timer>0.1f || !async.isDone)
 		{
