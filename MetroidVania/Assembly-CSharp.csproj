@@ -100,7 +100,6 @@
      <Compile Include="Assets\Scripts\Standard Assets\PlatformerCharacter2D.cs" />
      <Compile Include="Assets\Scripts\Standard Assets\Restarter.cs" />
      <Compile Include="Assets\Scripts\Standard Assets\ShootBehaviour.cs" />
-     <None Include="Assets\Standard Assets\CrossPlatformInput\CrossPlatformInputGuidelines.txt" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>

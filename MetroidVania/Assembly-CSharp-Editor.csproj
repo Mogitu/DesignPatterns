@@ -47,18 +47,6 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Editor\CrossPlatformInput\CrossPlatformInputInitialize.cs" />
-     <Compile Include="Assets\Editor\CrossPlatformInput\Scripts\AxisTouchButton.cs" />
-     <Compile Include="Assets\Editor\CrossPlatformInput\Scripts\ButtonHandler.cs" />
-     <Compile Include="Assets\Editor\CrossPlatformInput\Scripts\CrossPlatformInputManager.cs" />
-     <Compile Include="Assets\Editor\CrossPlatformInput\Scripts\InputAxisScrollbar.cs" />
-     <Compile Include="Assets\Editor\CrossPlatformInput\Scripts\Joystick.cs" />
-     <Compile Include="Assets\Editor\CrossPlatformInput\Scripts\MobileControlRig.cs" />
-     <Compile Include="Assets\Editor\CrossPlatformInput\Scripts\PlatformSpecific\MobileInput.cs" />
-     <Compile Include="Assets\Editor\CrossPlatformInput\Scripts\PlatformSpecific\StandaloneInput.cs" />
-     <Compile Include="Assets\Editor\CrossPlatformInput\Scripts\TiltInput.cs" />
-     <Compile Include="Assets\Editor\CrossPlatformInput\Scripts\TouchPad.cs" />
-     <Compile Include="Assets\Editor\CrossPlatformInput\Scripts\VirtualInput.cs" />
-     <None Include="Assets\Standard Assets\CrossPlatformInput\CrossPlatformInputGuidelines.txt" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>
