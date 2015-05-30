@@ -18,10 +18,10 @@ public class InputHandler  {
 
 	public Command HandleInput()
 	{
-		if(Input.GetKey(KeyCode.Space))return jump;
-		if(Input.GetKey(KeyCode.LeftArrow))return WalkLeft;
-		if(Input.GetKey(KeyCode.RightArrow))return walkRight;
-		if(Input.GetKey(KeyCode.LeftControl))return shoot;
+		if(Input.GetKeyDown(KeyCode.Space))return jump;
+		if(Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.A))return WalkLeft;
+		if(Input.GetKey(KeyCode.RightArrow)||Input.GetKey(KeyCode.D))return walkRight;
+		if(Input.GetKey(KeyCode.LeftControl) || Input.GetMouseButtonDown(0))return shoot;
 		return null;
 	}
 }

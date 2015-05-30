@@ -7,7 +7,7 @@ public class CheckPointOriginator : MonoBehaviour {
 	public CheckPointMemento CreateMemento()
 	{
 		bool facingRight=true;
-		if(gameObject.GetComponent<Player>().transform.localScale.x==-1)
+		if(gameObject.transform.localScale.x==-1)
 		{
 			facingRight=false;
 		}

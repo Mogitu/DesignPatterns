@@ -7,6 +7,11 @@ public class Player : MonoBehaviour {
 	public float JumpForce=1000;
 	private float forceX;
 
+	[HideInInspector]
+	public bool jump=false;
+	[HideInInspector]
+	public bool grounded=true;
+
 	//These objects can be seen as a part of the component structure
 	private InputHandler inputHandler;
 	private Rigidbody2D body;
@@ -27,14 +32,25 @@ public class Player : MonoBehaviour {
            for when there is no input etc.
 		 */		 
 		forceX=0;
+
 		Command command = inputHandler.HandleInput();
 		//check if there is ANY type of command being executed.
 		if(command!=null){
 			command.Execute(gameObject);
 		}
+
 		animator.SetFloat("Speed",Mathf.Abs(forceX));
 		//we update the speed depending on values we get from the input
 		body.velocity = new Vector2(forceX, body.velocity.y);
+
+		if(Mathf.Abs(body.velocity.y)<=0.01f){
+			grounded=true;
+		}else{
+			grounded=false;
+		}
+
+		animator.SetBool("Ground", grounded);
+		animator.SetBool("Jump",jump);
 	}
 	
 	// Update is called once per frame
@@ -42,6 +58,15 @@ public class Player : MonoBehaviour {
 
 	}
 
+	public void Jump()
+	{
+		// Add a vertical force to the player.
+		grounded = false;	
+		jump=false;
+		animator.SetBool("Ground", false);
+		animator.SetBool("Jump", false);
+		body.AddForce(new Vector2(0f, JumpForce));
+	}
 
 	public float ForceX
 	{

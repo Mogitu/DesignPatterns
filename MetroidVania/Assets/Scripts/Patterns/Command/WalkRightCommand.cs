@@ -7,7 +7,6 @@ public class WalkRightCommand : Command
 	{
 		Player script = obj.GetComponent<Player> ();
 		obj.transform.localScale = new Vector2 (1, 1);
-		script.Animator.SetBool("walking",true);
 		script.ForceX = script.MaxSpeed;
 	}
 }
