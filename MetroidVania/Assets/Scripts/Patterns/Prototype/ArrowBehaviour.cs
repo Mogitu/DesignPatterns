@@ -26,43 +26,51 @@ public class ArrowBehaviour : MonoBehaviour {
 	// Update is called once per frame
 	void Update () 
 	{
-		if(!hasLanded)
-		{
-			transform.position = transform.position + transform.right * speed* Time.deltaTime;
-			Vector3 rot = transform.eulerAngles;
-			if(rot.z<90)rot.z-= upwardDrag*Time.deltaTime;
-			else if(rot.z<180)rot.z+=upwardDrag*Time.deltaTime;
-			else if(rot.z<270)rot.z+=downwardDrag*Time.deltaTime;
-			else rot.z-=downwardDrag*Time.deltaTime;
-			transform.eulerAngles = rot;
-			RaycastHit2D hit =   Physics2D.Raycast(transform.position,transform.right,avoidDistanceEnemies,whatCanIHit);
-			if(hit.collider !=null)
-				if(hit.collider.gameObject.GetComponent<EnemyController>()!=null)
-					hit.collider.gameObject.GetComponent<EnemyController>().incomingArrow = true;
-		}
-		timer-= Time.deltaTime;
-		if(timer<=0)
-		{
-			Destroy(gameObject);
-		}
+			if(!hasLanded)
+			{
+				transform.position = transform.position + transform.right * speed* Time.deltaTime;
+				Vector3 rot = transform.eulerAngles;
+				if(rot.z<90)rot.z-= upwardDrag*Time.deltaTime;
+				else if(rot.z<180)rot.z+=upwardDrag*Time.deltaTime;
+				else if(rot.z<270)rot.z+=downwardDrag*Time.deltaTime;
+				else rot.z-=downwardDrag*Time.deltaTime;
+				transform.eulerAngles = rot;
+				RaycastHit2D hit =   Physics2D.Raycast(transform.position,transform.right,avoidDistanceEnemies,whatCanIHit);
+				if(hit.collider !=null)
+					if(hit.collider.gameObject.GetComponent<EnemyController>()!=null)
+						hit.collider.gameObject.GetComponent<EnemyController>().incomingArrow = true;
+			}
+			timer-= Time.deltaTime;
+			if(timer<=0)
+			{
+				timer=timeAlive;
+				this.collider.enabled = true;
+				GetComponent<Rigidbody2D>().isKinematic = false;
+				hasLanded=false;
+				gameObject.SetActive(false);//Destroy(gameObject);
+			}
 	}
 
 	public void OnCollisionEnter2D(Collision2D collider)
 	{
-		if(hasLanded)return;
-		hasLanded = true;
-		DieBehaviour die = collider.gameObject.GetComponent<DieBehaviour>();
-		ArrowBehaviour arr = collider.gameObject.GetComponent<ArrowBehaviour>();
-		if(die!=null)
+		if(gameObject.activeSelf)
 		{
-			Instantiate(blood,collider.contacts[0].point,Quaternion.identity);
-			die.Kill(" got hit by an arrow");
+			if(hasLanded)return;
+			hasLanded = true;
+			DieBehaviour die = collider.gameObject.GetComponent<DieBehaviour>();
+			ArrowBehaviour arr = collider.gameObject.GetComponent<ArrowBehaviour>();
+			if(die!=null)
+			{
+				Instantiate(blood,collider.contacts[0].point,Quaternion.identity);
+				die.Kill(" got hit by an arrow");
+			}
+			if(arr != null){
+				gameObject.SetActive(false);//Destroy(gameObject);
+			}			
+			this.collider.enabled = false;
+			GetComponent<Rigidbody2D>().isKinematic = true;
+			//transform.parent = collider.transform;
 		}
-		if(arr != null)
-			Destroy(gameObject);
-		
-		this.collider.enabled = false;
-		GetComponent<Rigidbody2D>().isKinematic = true;
-		transform.parent = collider.transform;
+
 	}
 }

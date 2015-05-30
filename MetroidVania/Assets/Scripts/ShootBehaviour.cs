@@ -43,9 +43,15 @@ public class ShootBehaviour : MonoBehaviour
 	{
 		animator.SetBool ("Shoot", false);
 		if (gameObject.transform.localScale.x == 1)
-			Instantiate (arrowPrefab, releasePoint.position, releasePoint.rotation);
+		{
+			GameObject arrow = ObjectPool.GetInstance.getPooledObject();
+			arrow.transform.position = releasePoint.position;
+			arrow.transform.rotation = releasePoint.rotation;	
+		}			
 		else {
-			GameObject arrow = (GameObject)Instantiate (arrowPrefab, releasePoint.position, releasePoint.rotation);
+			GameObject arrow = ObjectPool.GetInstance.getPooledObject();
+			arrow.transform.position = releasePoint.position;
+			arrow.transform.rotation = releasePoint.rotation;
 			arrow.transform.eulerAngles = new Vector3 (arrow.transform.eulerAngles.x, arrow.transform.eulerAngles.y, -arrow.transform.eulerAngles.z + 180);
 		}
 	}

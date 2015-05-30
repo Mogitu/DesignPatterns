@@ -73,7 +73,7 @@ MonoBehaviour:
   speed: 24
   upwardDrag: 16.1000004
   downwardDrag: 31
-  timeAlive: 10.8000002
+  timeAlive: 10
   whatCanIHit:
     serializedVersion: 2
     m_Bits: 256

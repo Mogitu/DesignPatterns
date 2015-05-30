@@ -1,52 +1,59 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
-/**
- *Object pool for testing. 
- *Objects are currently still coupled to the pool.
-*/
-public class ObjectPool : MonoBehaviour
-{
-	public TestObject prefab;
-	public int instanceCount = 10;
-	private TestObject[] instances;
-	public static Vector3 stackPosition = new Vector3 (-9999, -9999, -9999);
-	static float power = 10;
+public class ObjectPool : MonoBehaviour {
 
-	void Start ()
-	{
-		instances = new TestObject[instanceCount];
-		for (var i = 0; i < instanceCount; i++) 
+
+	public GameObject pooledObject;
+	public int pooledAmount=20;
+	public bool willGrow=true;
+
+	private List<GameObject> pooledObjects;
+
+	//Singleton instance
+	private static ObjectPool instance =null;
+	
+	//Get the instance with an property
+	public static ObjectPool GetInstance{
+		get{
+			//If there is no instance yet, find it in the scene hierarchy
+			if(instance == null){
+				instance = (ObjectPool)FindObjectOfType(typeof(ObjectPool));
+			}
+			//Return the instance
+			return instance;
+		}
+	}
+	// Use this for initialization
+	void Start () {
+		pooledObjects = new List<GameObject>();
+		for(int i=0;i<pooledAmount;i++)
 		{
-			instances [i] = Instantiate (prefab);
-			//instances[i] = Instantiate(prefab, stackPosition, Quaternion.identity);
-			//object are by default not enabled
-			instances [i].enabled = false;
+			GameObject obj =(GameObject)Instantiate(pooledObject);
+			obj.SetActive(false);
+			pooledObjects.Add(obj);
 		}
 	}
 
-	// Update is called once per frame
-	void Update ()
-	{
-		if (Input.GetButtonDown ("Fire1")) {
-			TestObject obj = GetNextAvailableInstance ();
-			if (obj != null) {
-				obj.Initialize (transform, power);
-			}
-		}                                                              
-	}
 
-	//loop through all object to find the first available one
-	//can be improved by using a (linked)list
-	public  TestObject GetNextAvailableInstance ()
+	public GameObject getPooledObject()
 	{
-		for (int i=0; i< instanceCount; i++) 
-		{
-			if (!instances [i].enabled) 
-			{
-				return instances [i];
+		for(int i=0; i<pooledObjects.Count;i++){
+			if(!pooledObjects[i].activeSelf){
+				pooledObjects[i].SetActive(true);
+				return pooledObjects[i];
 			}
 		}
+
+		if(willGrow)
+		{
+			GameObject obj= (GameObject)Instantiate(pooledObject);
+			pooledObjects.Add(obj);
+			return obj;
+		}
+		Debug.Log("All objects are in use, maybe make the list grow?");
 		return null;
 	}
+
 }

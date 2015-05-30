@@ -89,7 +89,6 @@
      <Compile Include="Assets\Scripts\Patterns\Memento\CheckPointMemento.cs" />
      <Compile Include="Assets\Scripts\Patterns\Memento\CheckPointOriginator.cs" />
      <Compile Include="Assets\Scripts\Patterns\ObjectPool\ObjectPool.cs" />
-     <Compile Include="Assets\Scripts\Patterns\ObjectPool\TestObject.cs" />
      <Compile Include="Assets\Scripts\Patterns\Observer\Achievement.cs" />
      <Compile Include="Assets\Scripts\Patterns\Observer\EnemySubject.cs" />
      <Compile Include="Assets\Scripts\Patterns\Observer\KillAchievement.cs" />
