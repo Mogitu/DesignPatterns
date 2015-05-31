@@ -33,7 +33,8 @@ public class DieBehaviour : MonoBehaviour {
 
 	public void removeFromGame()
 	{
-		EnemySubject eSub = GameObject.Find("Enemies").GetComponent<EnemySubject>();
+		GameObject obj = GameObject.FindGameObjectWithTag("Enemy");
+		EnemySubject eSub = obj.GetComponent<EnemySubject>();
 		if(eSub)
 			eSub.enemyState = EnemyState.EnemyKilled;
 
