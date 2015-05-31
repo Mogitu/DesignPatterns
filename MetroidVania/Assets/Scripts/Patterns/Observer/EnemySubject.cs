@@ -3,14 +3,15 @@ using System.Collections;
 
 public enum EnemyState
 {
-	ALIVE,
-	KILLED
+	EnemiesLeft,
+	EnemyKilled,
+	AllEnemiesKilled
 }
 
 public class EnemySubject : Subject
 {
 	//This one is for the inspector
-	public EnemyState state = EnemyState.ALIVE;
+	public EnemyState state = EnemyState.EnemiesLeft;
 
 	//This one for getting and setting the state (setting a state will also call notify)
 	public EnemyState enemyState
@@ -20,8 +21,12 @@ public class EnemySubject : Subject
 		{
 			if(state != value)
 			{
+				EnemyState oldState = state;
 				state = value;
 				notify();
+
+				if(transform.childCount >= 0)
+					state = oldState;
 			}
 		}
 	}

@@ -46,7 +46,6 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\CrossPlatformInput\CrossPlatformInputInitialize.cs" />
      <Compile Include="Assets\CrossPlatformInput\Scripts\AxisTouchButton.cs" />
      <Compile Include="Assets\CrossPlatformInput\Scripts\ButtonHandler.cs" />
      <Compile Include="Assets\CrossPlatformInput\Scripts\CrossPlatformInputManager.cs" />
@@ -90,6 +89,7 @@
      <Compile Include="Assets\Scripts\Patterns\Memento\CheckPointOriginator.cs" />
      <Compile Include="Assets\Scripts\Patterns\ObjectPool\ObjectPool.cs" />
      <Compile Include="Assets\Scripts\Patterns\Observer\Achievement.cs" />
+     <Compile Include="Assets\Scripts\Patterns\Observer\AchievementManager.cs" />
      <Compile Include="Assets\Scripts\Patterns\Observer\EnemySubject.cs" />
      <Compile Include="Assets\Scripts\Patterns\Observer\KillAchievement.cs" />
      <Compile Include="Assets\Scripts\Patterns\Observer\Observer.cs" />

@@ -43,7 +43,7 @@ public class ShootBehaviour : MonoBehaviour
 	{
 		animator.SetBool ("Shoot", false);
 		if (gameObject.transform.localScale.x == 1)
-		{
+		{	
 			GameObject arrow = ObjectPool.GetInstance.getPooledObject();
 			arrow.transform.position = releasePoint.position;
 			arrow.transform.rotation = releasePoint.rotation;	

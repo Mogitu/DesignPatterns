@@ -10,26 +10,55 @@ public class SlideInText : MonoBehaviour
 	private Vector3 to;
 	private float startTime;
 	private float journeyLength;
-	RectTransform textTrans;
+	private RectTransform textTrans;
+	private Text text;
 
-	void Start () 
+	void Awake()
 	{
-		startTime = Time.time;
-		journeyLength = Vector3.Distance(from, to);
 		textTrans = transform as RectTransform;
-
-		to = textTrans.localPosition;
-		from = to + new Vector3(textTrans.rect.width, 0, 0);
-		textTrans.localPosition = from;
-
-		Invoke("DestroyGUI", 10);
+		text = GetComponent<Text>();
 	}
 
 	void Update () 
 	{
 		float distCovered = (Time.time - startTime) * Speed;
 		float fracJourney = distCovered / journeyLength;
+
+		if(float.IsNaN(fracJourney) || float.IsInfinity(fracJourney))
+			return;
+
 		textTrans.localPosition = Vector3.Lerp(from, to, fracJourney);
+
+	}
+
+	public void SlideIn(string message)
+	{
+		this.enabled = true;
+
+		text.text = message;
+
+		startTime = Time.time;
+		from = textTrans.localPosition;
+		to = from - new Vector3(textTrans.rect.width, 0, 0);
+		journeyLength = Vector3.Distance(from, to);
+
+		Invoke("SlideOut", 10);
+	}
+	
+	public void SlideOut()
+	{
+		startTime = Time.time;
+		from = textTrans.localPosition;
+		to = from + new Vector3(textTrans.rect.width, 0, 0);
+		journeyLength = Vector3.Distance(from, to);
+
+		Invoke("disableScript", 10);
+	}
+
+	public void disableScript()
+	{
+		//No need to keep updating it when it's outside of the screen
+		this.enabled = false;
 	}
 
 	public void DestroyGUI()

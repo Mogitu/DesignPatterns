@@ -9,18 +9,17 @@ abstract public class Achievement : Observer
 
 	private EnemyState enState;
 	private EnemySubject enSubject;
-	private Text text;
 
 	void Start()
 	{
-		text = GetComponent<Text>();
+
 	}
 
 	public override void refresh ()
 	{
 		enState = enSubject.enemyState;
 
-		if(enState == EnemyState.KILLED)
+		if(enState == EnemyState.EnemyKilled)
 		{
 			progress();
 		}
@@ -39,9 +38,7 @@ abstract public class Achievement : Observer
 		Unlocked = true;
 
 		// Show Achievement
-		text.enabled = true;
-		GetComponent<SlideInText>().enabled = true;
-		text.text = Name;
+		GameObject.Find("txtAchievement").GetComponent<SlideInText>().SlideIn(Name);
 
 		// Detach because we don't have to update the achievement anymore
 		enSubject.detach(this);

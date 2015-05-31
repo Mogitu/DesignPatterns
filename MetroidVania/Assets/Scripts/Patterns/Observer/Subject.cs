@@ -17,6 +17,7 @@ abstract public class Subject : MonoBehaviour
 	public void attach(Observer ob)
 	{
 		observers.Add(ob);
+		ob.setSubect(this);
 	}
 
 	public void detach(Observer ob)

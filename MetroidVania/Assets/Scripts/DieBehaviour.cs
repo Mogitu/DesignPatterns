@@ -9,7 +9,6 @@ public class DieBehaviour : MonoBehaviour {
 	void Start () {
 		animator = GetComponent<Animator>();
 		animator.SetBool("Kill",false);
-
 	}
 	
 	// Update is called once per frame
@@ -34,9 +33,9 @@ public class DieBehaviour : MonoBehaviour {
 
 	public void removeFromGame()
 	{
-		EnemySubject eSub = GetComponent<EnemySubject>();
+		EnemySubject eSub = GameObject.Find("Enemies").GetComponent<EnemySubject>();
 		if(eSub)
-			eSub.enemyState = EnemyState.KILLED;
+			eSub.enemyState = EnemyState.EnemyKilled;
 
 		Destroy(gameObject);
 	}
