@@ -9,6 +9,9 @@ public class AchievementManager : MonoBehaviour {
 		Achievement[] kAchievs = GameObject.Find("KillRelatedAchievements").GetComponents<Achievement>();
 		GameObject enemies = GameObject.Find("Enemies");
 
+		if(kAchievs.Length == 0 || !enemies)
+			return;
+
 		EnemySubject eSub = enemies.GetComponent<EnemySubject>();
 
 		if(eSub != null)
