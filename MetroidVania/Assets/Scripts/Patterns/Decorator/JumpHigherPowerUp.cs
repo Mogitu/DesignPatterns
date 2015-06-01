@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 namespace Decorator
 {
@@ -7,7 +7,7 @@ namespace Decorator
 		const float forceToAdd = 400;
 		public JumpHigherPowerUp(PowerUpBehaviour behaviour,Component component,float timeAlive):base(behaviour,component,timeAlive)
 		{
-			behaviour.character.JumpForce +=forceToAdd;
+			behaviour.character.jumpForce +=forceToAdd;
 		}
 		public override void DoOperation(PowerUpBehaviour behaviour)
 		{
@@ -17,7 +17,7 @@ namespace Decorator
 		public override void removePowerUp(PowerUpBehaviour behaviour)
 		{
 			base.removePowerUp(behaviour);
-			behaviour.character.JumpForce -=forceToAdd;
+			behaviour.character.jumpForce -=forceToAdd;
 		}
 	}
 }

@@ -5,8 +5,8 @@ public class ShootCommand : Command
 {
 	public void Execute (GameObject obj)
 	{
-		Player script = obj.GetComponent<Player> ();
-		script.ShootBehaviour.Shoot();
+		ShootBehaviour script = obj.GetComponent<ShootBehaviour> ();
+		script.Shoot();
 
 	}
 }

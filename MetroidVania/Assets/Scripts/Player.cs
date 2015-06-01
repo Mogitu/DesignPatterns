@@ -2,21 +2,17 @@
 using System.Collections;
 
 public class Player : MonoBehaviour {
-	public int health=100;
 	public float MaxSpeed=10;
-	public float JumpForce=1000;
+	public float jumpForce=1000;
+	
 	private float forceX;
+	private bool jump=false;
+	private bool grounded=true;
 
-	[HideInInspector]
-	public bool jump=false;
-	[HideInInspector]
-	public bool grounded=true;
-
-	//These objects can be seen as a part of the component structure
+	//Attached objects
 	private InputHandler inputHandler;
 	private Rigidbody2D body;
 	private Animator animator;
-	private ShootBehaviour shootBehaviour;
 
 	// Use this for initialization
 	void Start () {
@@ -24,7 +20,6 @@ public class Player : MonoBehaviour {
 		inputHandler = new InputHandler();
 		body = GetComponent<Rigidbody2D>();
 		animator = GetComponent<Animator>();
-		shootBehaviour = GetComponent<ShootBehaviour>();
 	}
 
 	void FixedUpdate(){
@@ -38,17 +33,18 @@ public class Player : MonoBehaviour {
 		if(command!=null){
 			command.Execute(gameObject);
 		}
-
-		animator.SetFloat("Speed",Mathf.Abs(forceX));
-		//we update the speed depending on values we get from the input
-		body.velocity = new Vector2(forceX, body.velocity.y);
-
+	
+		//check if player is touching the groun
 		if(Mathf.Abs(body.velocity.y)<=0.01f){
 			grounded=true;
 		}else{
 			grounded=false;
 		}
+		//we update the speed depending on values we get from the input
+		body.velocity = new Vector2(forceX, body.velocity.y);
 
+		//update the animator
+		animator.SetFloat("Speed",Mathf.Abs(forceX));
 		animator.SetBool("Ground", grounded);
 		animator.SetBool("Jump",jump);
 	}
@@ -58,6 +54,17 @@ public class Player : MonoBehaviour {
 
 	}
 
+	//set up the animator for jumping
+	public void StartJump()
+	{
+		if(grounded)
+		{
+			jump=true;
+			animator.SetBool("Jump",true);
+		}
+	}
+
+	//make the real jump(executed at a specific frame in the animator)
 	public void Jump()
 	{
 		// Add a vertical force to the player.
@@ -65,20 +72,18 @@ public class Player : MonoBehaviour {
 		jump=false;
 		animator.SetBool("Ground", false);
 		animator.SetBool("Jump", false);
-		body.AddForce(new Vector2(0f, JumpForce));
+		body.AddForce(new Vector2(0f, jumpForce));
 	}
 
-	public float ForceX
+	public void Walk(float speed)
 	{
-		get {return forceX;}
-		set { forceX = value;}
+		//make sprite face correct direction
+		if(speed < 0){
+			transform.localScale = new Vector2 (-1, 1);	
+		}else{
+			transform.localScale = new Vector2 (1, 1);	
+		}	
+		forceX = speed;
 	}
 
-	public Animator Animator{
-		get {return animator;}
-	}
-
-	public ShootBehaviour ShootBehaviour{
-		get{return shootBehaviour;}
-	}
 }
