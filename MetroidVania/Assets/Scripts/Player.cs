@@ -10,30 +10,17 @@ public class Player : MonoBehaviour {
 	private bool grounded=true;
 
 	//Attached objects
-	private InputHandler inputHandler;
 	private Rigidbody2D body;
 	private Animator animator;
 
 	// Use this for initialization
 	void Start () {
-		//here we assign/cache the components.
-		inputHandler = new InputHandler();
+		//here we assign/cache the components.	
 		body = GetComponent<Rigidbody2D>();
 		animator = GetComponent<Animator>();
 	}
 
-	void FixedUpdate(){
-		/* at start of each physics frame we set several, physics related, values to 0 
-           for when there is no input etc.
-		 */		 
-		forceX=0;
-
-		Command command = inputHandler.HandleInput();
-		//check if there is ANY type of command being executed.
-		if(command!=null){
-			command.Execute(gameObject);
-		}
-	
+	void FixedUpdate(){	
 		//check if player is touching the groun
 		if(Mathf.Abs(body.velocity.y)<=0.01f){
 			grounded=true;
@@ -47,6 +34,7 @@ public class Player : MonoBehaviour {
 		animator.SetFloat("Speed",Mathf.Abs(forceX));
 		animator.SetBool("Ground", grounded);
 		animator.SetBool("Jump",jump);
+		forceX=0;	
 	}
 	
 	// Update is called once per frame
