@@ -11,3 +11,9 @@ EditorBuildSettings:
     path: Assets/Scenes/BasTestScene.unity
   - enabled: 1
     path: Assets/Scenes/Levels/level1.unity
+  - enabled: 1
+    path: Assets/Scenes/Levels/level2.unity
+  - enabled: 1
+    path: Assets/Scenes/Levels/level3.unity
+  - enabled: 1
+    path: Assets/Scenes/Levels/level5.unity

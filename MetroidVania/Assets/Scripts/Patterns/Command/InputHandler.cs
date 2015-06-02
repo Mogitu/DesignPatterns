@@ -9,10 +9,10 @@ public class InputHandler  {
 	
 	public Command HandleInput()
 	{
-		if(Input.GetKeyDown(KeyCode.Space))return new JumpCommand();
+		if(Input.GetKey(KeyCode.Space))return new JumpCommand();
 		if(Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.A))return new WalkLeftCommand();
 		if(Input.GetKey(KeyCode.RightArrow)||Input.GetKey(KeyCode.D))return new WalkRightCommand();
-		if(Input.GetKey(KeyCode.LeftControl) || Input.GetMouseButtonDown(0))return new ShootCommand();
+		if(Input.GetKey(KeyCode.LeftControl) || Input.GetButton("Fire1"))return new ShootCommand();
 		return null;
 	}
 }

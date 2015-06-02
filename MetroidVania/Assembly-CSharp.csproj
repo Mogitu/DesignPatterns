@@ -39,10 +39,10 @@
 	<Reference Include="System.Core" />
 	<Reference Include="System.Xml.Linq" />
 	<Reference Include="UnityEngine">
-	  <HintPath>C:/Program Files/Unity/Editor/Data/Managed/UnityEngine.dll</HintPath>
+	  <HintPath>D:/Program Files (x86)/Unity/Editor/Data/Managed/UnityEngine.dll</HintPath>
 	</Reference>
 	<Reference Include="UnityEditor">
-	  <HintPath>C:/Program Files/Unity/Editor/Data/Managed/UnityEditor.dll</HintPath>
+	  <HintPath>D:/Program Files (x86)/Unity/Editor/Data/Managed/UnityEditor.dll</HintPath>
 	</Reference>
   </ItemGroup>
   <ItemGroup>
@@ -64,6 +64,7 @@
      <Compile Include="Assets\Scripts\KillOnHitBehaviour.cs" />
      <Compile Include="Assets\Scripts\Other\GameEndBehaviour.cs" />
      <Compile Include="Assets\Scripts\Other\GameStartBehaviour.cs" />
+     <Compile Include="Assets\Scripts\Other\MenuBehaviour.cs" />
      <Compile Include="Assets\Scripts\PSEffect.cs" />
      <Compile Include="Assets\Scripts\Patterns\Command\Command.cs" />
      <Compile Include="Assets\Scripts\Patterns\Command\InputHandler.cs" />
@@ -114,10 +115,10 @@
      <Compile Include="Assets\Scripts\Standard Assets\Platformer2DUserControl.cs" />
      <Compile Include="Assets\Scripts\Standard Assets\PlatformerCharacter2D.cs" />
  <Reference Include="UnityEngine.UI">
- <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
+ <HintPath>D:/Program Files (x86)/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>
  <Reference Include="UnityEditor.iOS.Extensions.Xcode">
- <HintPath>C:/Program Files/Unity/Editor/Data/PlaybackEngines/iossupport/UnityEditor.iOS.Extensions.Xcode.dll</HintPath>
+ <HintPath>D:/Program Files (x86)/Unity/Editor/Data/PlaybackEngines/iossupport/UnityEditor.iOS.Extensions.Xcode.dll</HintPath>
  </Reference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
