@@ -63,6 +63,7 @@ public class ArrowBehaviour : MonoBehaviour {
 			{
 				Instantiate(blood,collider.contacts[0].point,Quaternion.identity);
 				die.Kill(" got hit by an arrow");
+				gameObject.SetActive(false);
 			}
 			if(arr != null){
 				gameObject.SetActive(false);//Destroy(gameObject);
