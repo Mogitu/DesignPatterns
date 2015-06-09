@@ -5,6 +5,7 @@ public class AchievementManager : MonoBehaviour
 {
 	void Start () 
 	{
+		//Attach kill achievements to the enemy subject
 		Achievement[] kAchievs = GameObject.Find("KillRelatedAchievements").GetComponents<Achievement>();
 		GameObject enemies = GameObject.Find("Enemies");
 

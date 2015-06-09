@@ -1,4 +1,0 @@
-﻿interface IObserver
-{
-	void notify();
-}

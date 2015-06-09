@@ -15,9 +15,7 @@ abstract public class Achievement : Observer
 		enState = enSubject.enemyState;
 
 		if(enState == EnemyState.EnemyKilled)
-		{
 			progress();
-		}
 	}
 
 	public override void setSubect (Subject sub)
