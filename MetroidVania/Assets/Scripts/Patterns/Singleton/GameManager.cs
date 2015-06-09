@@ -14,6 +14,9 @@ public class GameManager : MonoBehaviour {
 	public CheckPointOriginator checkPointOriginator;
 	public CheckPointCareTaker checkPointCareTaker;
 
+	private InputHandler inputHandler;
+	private GameObject player;
+
 	//Singleton instance
 	private static GameManager instance =null;
 
@@ -37,6 +40,8 @@ public class GameManager : MonoBehaviour {
 	void Start()
 	{
 		setCheckPoint();
+		inputHandler = new InputHandler();
+		player = GameObject.FindGameObjectWithTag("Player");
 	}
 
 	public static void setCheckPoint()
@@ -51,6 +56,15 @@ public class GameManager : MonoBehaviour {
 	public static void restoreCheckPoint()
 	{
 		instance.checkPointOriginator.SetMemento(instance.checkPointCareTaker.Memento);
+	}
+
+	void FixedUpdate()
+	{
+		Command command = inputHandler.HandleInput();
+		//check if there is ANY type of command being executed.
+		if(command!=null){
+			command.Execute(player);
+		}
 	}
 	
 	// Update is called once per frame

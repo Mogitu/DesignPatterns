@@ -1732,7 +1732,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11457694, guid: 53fbfab8be01ff44596a4aaabd7679e5, type: 2}
       propertyPath: nextLevel
-      value: level3
+      value: level1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 53fbfab8be01ff44596a4aaabd7679e5, type: 2}
@@ -4680,7 +4680,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 2007472, guid: ab7bf0936c796e1488b26bfda09b59e6, type: 2}
       propertyPath: orthographic size
-      value: 20
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 11499666, guid: ab7bf0936c796e1488b26bfda09b59e6, type: 2}
       propertyPath: target

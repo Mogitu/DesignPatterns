@@ -1,27 +1,18 @@
 ﻿using UnityEngine;
-using System.Collections;
-
+/**
+ * Author: Maikel van Munsteren
+ * Desc:   Figure out which key was pressed and invoke a (new) command.
+ * Todo:   To avoid massive command creation, we can/should instead declare the needed commands and init them in the constructor.
+ *         For testing new commands, the current setup works quick.
+ * */
 public class InputHandler  {
-	public JumpCommand jump;
-	public WalkLeftCommand WalkLeft;
-	public WalkRightCommand walkRight;
-	public ShootCommand shoot;
-
-
-	public InputHandler()
-	{
-		jump = new JumpCommand();
-		WalkLeft = new WalkLeftCommand();
-		walkRight = new WalkRightCommand();
-		shoot = new ShootCommand();
-	}
-
+	
 	public Command HandleInput()
 	{
-		if(Input.GetKeyDown(KeyCode.Space))return jump;
-		if(Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.A))return WalkLeft;
-		if(Input.GetKey(KeyCode.RightArrow)||Input.GetKey(KeyCode.D))return walkRight;
-		if(Input.GetKey(KeyCode.LeftControl) || Input.GetMouseButtonDown(0))return shoot;
+		if(Input.GetKey(KeyCode.Space))return new JumpCommand();
+		if(Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.A))return new WalkLeftCommand();
+		if(Input.GetKey(KeyCode.RightArrow)||Input.GetKey(KeyCode.D))return new WalkRightCommand();
+		if(Input.GetKey(KeyCode.LeftControl) || Input.GetButton("Fire1"))return new ShootCommand();
 		return null;
 	}
 }
