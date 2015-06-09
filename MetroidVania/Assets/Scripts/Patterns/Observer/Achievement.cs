@@ -10,11 +10,6 @@ abstract public class Achievement : Observer
 	private EnemyState enState;
 	private EnemySubject enSubject;
 
-	void Start()
-	{
-
-	}
-
 	public override void refresh ()
 	{
 		enState = enSubject.enemyState;
@@ -34,13 +29,10 @@ abstract public class Achievement : Observer
 
 	public void unlock()
 	{
-		// TODO: Not need anymore?
 		Unlocked = true;
-
 		// Show Achievement
 		GameObject.Find("txtAchievement").GetComponent<SlideInText>().SlideIn(Name);
-
-		// Detach because we don't have to update the achievement anymore
+		
 		enSubject.detach(this);
 	}
 }

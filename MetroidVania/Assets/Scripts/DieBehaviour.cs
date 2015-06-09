@@ -41,8 +41,6 @@ public class DieBehaviour : MonoBehaviour {
 				eSub.enemyState = EnemyState.EnemyKilled;
 		}
 
-
-
 		Destroy(gameObject);
 	}
 }

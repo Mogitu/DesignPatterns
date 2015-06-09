@@ -10,10 +10,10 @@ public enum EnemyState
 
 public class EnemySubject : Subject
 {
-	//This one is for the inspector
+	// State is visible in inspector
 	public EnemyState state = EnemyState.EnemiesLeft;
 
-	//This one for getting and setting the state (setting a state will also call notify)
+	// Set function also calls notify()
 	public EnemyState enemyState
 	{
 		get { return state; }
@@ -25,11 +25,10 @@ public class EnemySubject : Subject
 				state = value;
 				notify();
 
-				if(transform.childCount >= 0)
+				if(transform.childCount > 0)
 					state = oldState;
 			}
 		}
 	}
-
 }
 

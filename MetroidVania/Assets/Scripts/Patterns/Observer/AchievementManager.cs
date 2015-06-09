@@ -1,9 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class AchievementManager : MonoBehaviour {
-
-	// Use this for initialization
+public class AchievementManager : MonoBehaviour 
+{
 	void Start () 
 	{
 		Achievement[] kAchievs = GameObject.Find("KillRelatedAchievements").GetComponents<Achievement>();
@@ -22,5 +21,4 @@ public class AchievementManager : MonoBehaviour {
 			}
 		}
 	}
-
 }
