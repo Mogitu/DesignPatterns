@@ -3,7 +3,7 @@
  * Author: Maikel van Munsteren
  * Desc:   Figure out which key was pressed and invoke a (new) command.
  * Todo:   To avoid massive command creation, we can/should instead declare the needed commands and init them in the constructor.
- *         For testing new commands, the current setup works quick.
+ *         For testing/demonstrating new commands, the current setup works quickly.
  * */
 public class InputHandler  {
 	

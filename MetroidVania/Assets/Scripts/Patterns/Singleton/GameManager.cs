@@ -1,16 +1,9 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public enum GameState{
-  PLAYING,
-  GAMEOVER,
-  PAUSED
-	//etc....
-}
 
 public class GameManager : MonoBehaviour {
 
-	public GameState gameState = GameState.PLAYING;
 	public CheckPointOriginator checkPointOriginator;
 	public CheckPointCareTaker checkPointCareTaker;
 
@@ -69,27 +62,8 @@ public class GameManager : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-	    //
-		switch(gameState){
-		case GameState.PLAYING:
-			UpdatePlaying();
-			break;
-		case GameState.PAUSED:
-			UpdatePaused();
-			break;
-		case GameState.GAMEOVER:
-			UpdateGameOver();
-			break;
-		}	
+	  
 	}
 
-	void UpdatePlaying()
-	{
-	}
-
-	void UpdatePaused(){
-	}
-
-	void UpdateGameOver(){
-	}
+	
 }
