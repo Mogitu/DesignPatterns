@@ -6,6 +6,7 @@ public class JumpCommand : Command
 	public void Execute (GameObject obj)
 	{
 		Player script = obj.GetComponent<Player> ();
-		script.StartJump();
+        if(script)
+    		script.StartJump();
 	}
 }

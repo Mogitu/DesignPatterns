@@ -6,6 +6,7 @@ public class WalkLeftCommand : Command
 	public void Execute (GameObject obj)
 	{
 		Player script = obj.GetComponent<Player> ();
-		script.Walk(-script.MaxSpeed);
+        if (script)
+		    script.Walk(-script.MaxSpeed);
 	}
 }

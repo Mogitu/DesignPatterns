@@ -6,7 +6,7 @@ public class ShootCommand : Command
 	public void Execute (GameObject obj)
 	{
 		ShootBehaviour script = obj.GetComponent<ShootBehaviour> ();
-		script.Shoot();
-
+        if(script)
+		    script.Shoot();
 	}
 }
