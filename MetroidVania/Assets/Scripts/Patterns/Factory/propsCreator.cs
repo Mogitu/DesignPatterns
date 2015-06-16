@@ -1,9 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class propsCreator : Creator {
-
-	
+public class propsCreator : Creator 
+{
 	Sprite[] propSprites;
 	public enum propTypes
 	{
@@ -22,7 +21,6 @@ public class propsCreator : Creator {
 		gameObject.transform.localScale = scale;
 		SpriteRenderer sr =gameObject.AddComponent<SpriteRenderer> ();
 		sr.sprite = propSprites [Random.Range (0, 3)];
-
 		return new propsProduct ();
 	}
 }
